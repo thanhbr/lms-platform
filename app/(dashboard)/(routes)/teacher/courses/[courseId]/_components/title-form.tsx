@@ -17,13 +17,12 @@ import { Pencil } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { Course } from "@prisma/client";
 
 
 interface TitleFormProps {
-  initialData: {
-    title: string;
-  };
-  courseId: string;
+  initialData: Course
+  courseId: string
 };
 
 const formSchema = z.object({
@@ -45,7 +44,9 @@ export const TitleForm = ({
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: initialData
+    defaultValues: {
+      title: initialData?.title || ""
+    }
   })
 
   const { isSubmitting, isValid } = form.formState
