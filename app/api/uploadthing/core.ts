@@ -8,7 +8,6 @@ const handleAuth = () => {
   if(!userId) throw new Error("Unauthorized")
   return { userId }
 }
- 
 
 export const ourFileRouter = {
   // Define as many FileRoutes as you like, each with a unique routeSlug

@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Course } from "@prisma/client";
 import Image from "next/image";
-import FileUpload from "@/components/file-upload";
+import {FileUpload} from "@/components/file-upload";
 
 
 interface ImageFormProps {
@@ -92,11 +92,11 @@ export const ImageForm = ({
       )}
       {isEditing && (
         <div>
-          <FileUpload 
+          <FileUpload
             endpoint="courseImage"
             onChange={(url) => {
-              if(url) {
-                onSubmit({ imageUrl: url })
+              if (url) {
+                onSubmit({ imageUrl: url });
               }
             }}
           />
