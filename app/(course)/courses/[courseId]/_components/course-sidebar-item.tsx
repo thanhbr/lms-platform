@@ -49,7 +49,7 @@ export const CourseSidebarItem = ({
             isCompleted && "text-emerald-700"
           )}
         />
-        {label}
+        <p className="text-left">{label}</p> 
       </div>
       <div className={cn(
         "ml-auto opacity-0 border-2 border-slate-700 h-full transition-all",
