@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div>
-      Dashboards
+      It's coming soon
     </div>
   )
 }

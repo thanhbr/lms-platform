@@ -5,6 +5,12 @@ import { LogOut } from "lucide-react"
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { SearchInput } from "./search-input";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 const NavbarRoutes = () => {
   const pathname = usePathname();
@@ -31,11 +37,23 @@ const NavbarRoutes = () => {
             </Link>
           )
           : (
-            <Link href="/teacher/courses">
-              <Button size="sm" variant="ghost">
-                Teacher mode
-              </Button>
-            </Link>
+            // <Link href="/teacher/courses">
+            //   <Button size="sm" variant="ghost">
+            //     Teacher mode
+            //   </Button>
+            // </Link>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button size="sm" variant="ghost">
+                    Teacher mode
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>It's coming soon</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           )
         }
         <UserButton 
