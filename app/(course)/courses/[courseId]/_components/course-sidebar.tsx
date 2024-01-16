@@ -48,7 +48,7 @@ export const CourseSideBar = async ({
               value={progressCount}
             />
           </div>
-        )}
+        )}l
       </div>
       <div className="flex flex-col w-full">
         {course.chapters.map((chapter) => (
